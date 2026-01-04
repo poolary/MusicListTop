@@ -5,10 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/API/Enviar": {
+    "/api/Musica/Enviar": {
       "post": {
         "tags": [
-          "API"
+          "Musica"
         ],
         "requestBody": {
           "content": {
@@ -36,14 +36,14 @@
         }
       }
     },
-    "/api/API/Mostrar": {
+    "/api/Musica/Mostrar": {
       "get": {
         "tags": [
-          "API"
+          "Musica"
         ],
         "parameters": [
           {
-            "name": "MusicTop",
+            "name": "Nome da música",
             "in": "query",
             "schema": {
               "type": "string"
@@ -57,14 +57,14 @@
         }
       }
     },
-    "/api/API/Deletar": {
+    "/api/Musica/Deletar": {
       "delete": {
         "tags": [
-          "API"
+          "Musica"
         ],
         "parameters": [
           {
-            "name": "code",
+            "name": "Id da música que deseja deletar",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -79,10 +79,10 @@
         }
       }
     },
-    "/api/API/Atualizar": {
+    "/api/Musica/Atualizar": {
       "put": {
         "tags": [
-          "API"
+          "Musica"
         ],
         "requestBody": {
           "content": {
@@ -109,10 +109,64 @@
           }
         }
       }
+    },
+    "/api/Musica/Email": {
+      "post": {
+        "tags": [
+          "Musica"
+        ],
+        "parameters": [
+          {
+            "name": "senha",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmailDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmailDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmailDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "EmailDTO": {
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          }
+        },
+        "additionalProperties": false
+      },
       "Musica": {
         "type": "object",
         "properties": {
@@ -139,7 +193,7 @@
   },
   "tags": [
     {
-      "name": "API"
+      "name": "Musica"
     }
   ]
 }

@@ -9,4 +9,5 @@ namespace CRUD.Models
         public string? MusicArtist { get; set; }
         public string? MusicTop { get; set; }
     }
+
 }

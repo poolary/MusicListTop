@@ -10,5 +10,6 @@ namespace CRUD.Data
         {
         }
         public DbSet<Musica> MusicasLike { get; set; }
+        public DbSet<User> UsersPW { get; set; }
     }
 }

@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "CRUD.Controllers.API",
+    "ContainingType": "CRUD.Controllers.MusicaController",
     "Method": "EditarMusica",
-    "RelativePath": "api/API/Atualizar",
+    "RelativePath": "api/Musica/Atualizar",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -16,15 +16,15 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CRUD.Controllers.API",
+    "ContainingType": "CRUD.Controllers.MusicaController",
     "Method": "DeleteMusica",
-    "RelativePath": "api/API/Deletar",
+    "RelativePath": "api/Musica/Deletar",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "code",
+        "Name": "Id da m\u00FAsica que deseja deletar",
         "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       }
@@ -32,9 +32,30 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CRUD.Controllers.API",
+    "ContainingType": "CRUD.Controllers.MusicaController",
+    "Method": "SendUser",
+    "RelativePath": "api/Musica/Email",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "_emailAddress",
+        "Type": "CRUD.Models.User\u002BEmailDTO",
+        "IsRequired": true
+      },
+      {
+        "Name": "senha",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CRUD.Controllers.MusicaController",
     "Method": "AddMusica",
-    "RelativePath": "api/API/Enviar",
+    "RelativePath": "api/Musica/Enviar",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -48,15 +69,15 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CRUD.Controllers.API",
+    "ContainingType": "CRUD.Controllers.MusicaController",
     "Method": "GetMusicas",
-    "RelativePath": "api/API/Mostrar",
+    "RelativePath": "api/Musica/Mostrar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "MusicTop",
+        "Name": "Nome da m\u00FAsica",
         "Type": "System.String",
         "IsRequired": false
       }
