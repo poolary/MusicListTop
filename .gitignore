@@ -10,6 +10,9 @@ obj/
 ## App settings
 appsettings.json
 appsettings.Development.json
+Properties/launchSettings.json
 
 ## Logs
 *.log
+
+
